@@ -494,11 +494,11 @@
 
 
 
-  <a href="mailto:desantismassimiliano1979@gmail.com" class="cta-btn" style="background:var(--gold)">
+  <a id="emailBtn" href="#" class="cta-btn" style="background:var(--gold)">
     <span class="btn-icon">📧</span>
     <span class="btn-text">
       <span class="btn-label">Email</span>
-      <span class="btn-value">desantismassimiliano1979@gmail.com</span>
+      <span class="btn-value" id="emailTxt">infolestanzedisharm@gmail.com</span>
     </span>
   </a>
   <div style="height:20px"></div>
@@ -659,6 +659,14 @@ function initScroll() {
   update();
 }
 initScroll();
+
+// Build email link at runtime to survive Cloudflare obfuscation
+(function() {
+  var u = 'infolestanzedisharm';
+  var d = 'gmail.com';
+  var btn = document.getElementById('emailBtn');
+  if (btn) btn.href = 'mailto:' + u + '@' + d;
+})();
 </script>
 </div>
 </body>
